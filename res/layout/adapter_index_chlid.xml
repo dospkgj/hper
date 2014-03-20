@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/adapter_index_chlid_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:text="Discovery "
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/adapter_index_child_today"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/adapter_index_chlid_name"
+        android:layout_marginLeft="2dip"
+        android:layout_toRightOf="@id/adapter_index_chlid_name"
+        android:text=" (今日: 5830)"
+        android:textSize="11sp" />
+
+    <TextView
+        android:id="@+id/adapter_index_chlid_intro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/adapter_index_chlid_name"
+        android:layout_marginLeft="20dip"
+        android:layout_marginTop="1dip"
+        android:text="每一位Hi-PDA公民的空气与水"
+        android:textColor="#e1e1e1"
+        android:textSize="11sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:layout_below="@+id/adapter_index_chlid_intro"
+        android:background="#EFEFEF"
+        android:layout_marginLeft="2dip"
+        android:layout_marginRight="2dip" />
+
+</RelativeLayout>

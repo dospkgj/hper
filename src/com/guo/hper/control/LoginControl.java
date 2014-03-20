@@ -19,8 +19,8 @@ import com.guo.hper.web.HttpClientStart;
 public class LoginControl  implements WebCallBack{
 	public void login(Handler handler,int what,String user, String passwd) {
 		List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-		nameValuePairs.add(new BasicNameValuePair("username", user));
-		nameValuePairs.add(new BasicNameValuePair("password", passwd));
+		nameValuePairs.add(new BasicNameValuePair("username", "打飞机逝世"));
+		nameValuePairs.add(new BasicNameValuePair("password", "dospkgj4339158"));
 		HttpClientStart.exc(handler, what, WebConfig.LONGIN_URL, nameValuePairs, this);
 	}
 	@Override
