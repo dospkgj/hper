@@ -15,4 +15,10 @@ public class WebConfig {
 	 * 登陆地址
 	 */
 	public static final String LONGIN_URL = BBS_URL+"logging.php?action=login&loginsubmit=yes&inajax=1";
+	
+	
+	/**
+	 * discovery 地址
+	 */
+	public static final String DISCOVERY_URL =BBS_URL+ "forumdisplay.php?fid=2";
 }

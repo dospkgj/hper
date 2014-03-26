@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <Preference
+        android:key="a"
+        android:title="Buy #173; Sell 交易服务区 "
+        />
+
+    <Preference
+        android:key="b"
+        android:title="Discovery"
+        />
+
+    <Preference
+        android:key="n"
+        android:title="Geek Talks · 奇客怪谈"
+        />
+
+
+</PreferenceScreen>

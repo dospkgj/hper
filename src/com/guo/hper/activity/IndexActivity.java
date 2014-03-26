@@ -1,58 +1,69 @@
 package com.guo.hper.activity;
 
-import com.guo.hper.R;
-import com.guo.hper.control.IndexControl;
-import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
+import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.os.Handler;
-import android.support.v7.app.ActionBar;
 import android.view.Menu;
-import android.view.MenuInflater;
+import android.view.MenuItem;
 
-public class IndexActivity extends BaseActionBarActivity {
+import com.guo.hper.R;
+import com.guo.hper.fragment.ContentFragment;
+import com.guo.hper.fragment.MenuFragment;
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.jeremyfeinstein.slidingmenu.lib.app.SlidingActivity;
 
-	private final int REDATA_HAN = 0x01;
-	private Handler handler = new Handler() {
+/**
+ * 
+ * @author <a href="mailto:kris@krislq.com">Kris.lee</a>
+ * @since Mar 12, 2013
+ * @version 1.0.0
+ */
+public class IndexActivity extends SlidingActivity {
 
-	};
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setTitle("SlidingMenu Demo");
+        setContentView(R.layout.frame_content);
+        
+     // set the Behind View
+        setBehindContentView(R.layout.frame_menu);
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        MenuFragment menuFragment = new MenuFragment();
+        fragmentTransaction.replace(R.id.menu, menuFragment);
+        fragmentTransaction.replace(R.id.content, new ContentFragment("Welcome"),"Welcome");
+        fragmentTransaction.commit();
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_index);
-		doString();
-	}
+        // customize the SlidingMenu
+        SlidingMenu sm = getSlidingMenu();
+        sm.setBehindOffsetRes(R.dimen.slidingmenu_offset);
+        sm.setFadeDegree(0.35f);
+        //设置slding menu的几种手势模式
+        //TOUCHMODE_FULLSCREEN 全屏模式，在content页面中，滑动，可以打开sliding menu
+        //TOUCHMODE_MARGIN 边缘模式，在content页面中，如果想打开slding ,你需要在屏幕边缘滑动才可以打开slding menu
+        //TOUCHMODE_NONE 自然是不能通过手势打开啦
+        sm.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
 
-	private void doString() {
-		initView();
-		getData();
-	}
+        //使用左上方icon可点，这样在onOptionsItemSelected里面才可以监听到R.id.home
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+    }
 
-	private void initView() {
-		SlidingMenu menu = new SlidingMenu(this);
-        menu.setMode(SlidingMenu.LEFT);
-        menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
-//        menu.setShadowWidthRes(200);
-//        menu.setShadowDrawable(R.drawable.shadow);
-        menu.setBehindOffsetRes(R.dimen.slidingmenu_offset);
-        menu.setFadeDegree(0.35f);
-        menu.attachToActivity(this, SlidingMenu.SLIDING_WINDOW);
-//        menu.setMenu(R.layout.menu);
-        ActionBar supportActionBar = getSupportActionBar();
-        System.out.println(supportActionBar);
-        menu.showMenu();
-	}
-
-	private void getData() {
-		IndexControl control = new IndexControl();
-		control.getData(handler, REDATA_HAN);
-	}
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-	    // Inflate the menu items for use in the action bar
-	    MenuInflater inflater = getMenuInflater();
-	    inflater.inflate(R.menu.index_activity, menu);
-	    return super.onCreateOptionsMenu(menu);
-	}
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.index_activity, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        case android.R.id.home:
+            //toggle就是程序自动判断是打开还是关闭
+            toggle();
+//          getSlidingMenu().showMenu();// show menu
+//          getSlidingMenu().showContent();//show content
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
