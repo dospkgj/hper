@@ -5,7 +5,7 @@
 
     <Preference
         android:key="a"
-        android:title="Buy #173; Sell 交易服务区 "
+        android:title="Buy &#038; Sell 交易服务区 "
         />
 
     <Preference
