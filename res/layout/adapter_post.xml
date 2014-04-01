@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/adapter_post_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#33333333" >
+
+        <TextView
+            android:id="@+id/adapter_post_anthour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="作者" />
+
+        <TextView
+            android:id="@+id/adapter_post_floor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="#11" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_below="@id/adapter_post_head"
+        android:id="@+id/adapter_post_neirong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
