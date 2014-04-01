@@ -49,7 +49,7 @@ public class PostAdatper extends BaseAdapter{
 		anthour.setText(list.get(position).PostAnthour);
 		floor.setText("#"+list.get(position).PostFloor);
 		neiRong.setText(Html.fromHtml(list.get(position).PostContent));
-		return null;
+		return inflate;
 	}
 
 }

@@ -40,7 +40,7 @@ public class JsoupTools {
 			String anthour = elementsByClass.text();
 			entity.PostAnthour = anthour;
 			Elements elementsByClass2 = element.getElementsByClass("t_msgfont");
-			entity.PostContent = elementsByClass2.text();
+			entity.PostContent = elementsByClass2.html();
 			entities.add(entity);
 		}
 		return entities;

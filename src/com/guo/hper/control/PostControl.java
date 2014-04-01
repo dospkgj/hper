@@ -24,9 +24,6 @@ public class PostControl implements WebCallBack{
 			IOException {
 		String string = EntityUtils.toString(object,"GBK");
 		List<PostEntity> jsoupPost = JsoupTools.jsoupPost(string);
-		return null;
+		return jsoupPost;
 	}
-	
-	
-
 }
