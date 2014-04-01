@@ -21,4 +21,6 @@ public class WebConfig {
 	 * discovery 地址
 	 */
 	public static final String DISCOVERY_URL =BBS_URL+ "forumdisplay.php?fid=2";
+	
+	public static final String BS_URL =BBS_URL+ "forumdisplay.php?fid=6";
 }

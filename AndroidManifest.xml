@@ -36,6 +36,8 @@
         </activity>
         <activity android:name="com.guo.hper.activity.IndexActivity" >
         </activity>
+        
+        <activity android:name="com.guo.hper.activity.PostActivity"></activity>
     </application>
 
 </manifest>

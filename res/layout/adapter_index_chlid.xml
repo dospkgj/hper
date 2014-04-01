@@ -37,7 +37,7 @@
         android:layout_height="1dip"
         android:layout_below="@+id/adapter_index_chlid_intro"
         android:background="#EFEFEF"
-        android:layout_marginLeft="2dip"
-        android:layout_marginRight="2dip" />
+        android:paddingLeft="2dip"
+        android:paddingRight="2dip" />
 
 </RelativeLayout>

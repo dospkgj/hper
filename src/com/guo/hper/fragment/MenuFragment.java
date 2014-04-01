@@ -2,6 +2,7 @@ package com.guo.hper.fragment;
 
 import com.guo.hper.R;
 import com.guo.hper.activity.IndexActivity;
+import com.guo.hper.config.BlockEnum;
 
 import android.app.FragmentManager;
 import android.os.Bundle;
@@ -44,7 +45,7 @@ public class MenuFragment extends PreferenceFragment implements OnPreferenceClic
             FragmentManager fragmentManager = ((IndexActivity)getActivity()).getFragmentManager();
             ContentFragment contentFragment = (ContentFragment)fragmentManager.findFragmentByTag("A");
             fragmentManager.beginTransaction()
-            .replace(R.id.content, contentFragment == null ?new ContentFragment("This is A Menu"):contentFragment ,"A")
+            .replace(R.id.content, contentFragment == null ?new ContentFragment(BlockEnum.BS):contentFragment ,"A")
             .commit();
         }else if("b".equals(key)) {
             if(index == 1) {
@@ -55,7 +56,7 @@ public class MenuFragment extends PreferenceFragment implements OnPreferenceClic
             FragmentManager fragmentManager = ((IndexActivity)getActivity()).getFragmentManager();
             ContentFragment contentFragment = (ContentFragment)fragmentManager.findFragmentByTag("B");
             fragmentManager.beginTransaction()
-            .replace(R.id.content, contentFragment == null ? new ContentFragment("This is B Menu"):contentFragment,"B")
+            .replace(R.id.content, contentFragment == null ? new ContentFragment(BlockEnum.DSECOVERY):contentFragment,"B")
             .commit();
         }else if("n".equals(key)) {
 
@@ -67,7 +68,7 @@ public class MenuFragment extends PreferenceFragment implements OnPreferenceClic
             FragmentManager fragmentManager = ((IndexActivity)getActivity()).getFragmentManager();
             ContentFragment contentFragment = (ContentFragment)fragmentManager.findFragmentByTag("N");
             fragmentManager.beginTransaction()
-            .replace(R.id.content, contentFragment == null ? new ContentFragment("This is N Menu"):contentFragment,"C")
+            .replace(R.id.content, contentFragment == null ? new ContentFragment(BlockEnum.GEEK):contentFragment,"C")
             .commit();
         }
         //anyway , show the sliding menu

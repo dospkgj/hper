@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.guo.hper.R;
+import com.guo.hper.config.BlockEnum;
 import com.guo.hper.fragment.ContentFragment;
 import com.guo.hper.fragment.MenuFragment;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
@@ -23,7 +24,7 @@ public class IndexActivity extends SlidingActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle("SlidingMenu Demo");
+        setTitle("Hi-pda客户端");
         setContentView(R.layout.frame_content);
         
      // set the Behind View
@@ -31,7 +32,7 @@ public class IndexActivity extends SlidingActivity {
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
         MenuFragment menuFragment = new MenuFragment();
         fragmentTransaction.replace(R.id.menu, menuFragment);
-        fragmentTransaction.replace(R.id.content, new ContentFragment("Welcome"),"Welcome");
+        fragmentTransaction.replace(R.id.content, new ContentFragment(BlockEnum.DSECOVERY),"b");
         fragmentTransaction.commit();
 
         // customize the SlidingMenu
